@@ -6,5 +6,8 @@ var pikePlace {
   avgPndPerCust: 3.7
 };
 
-var randomCustPikePlace = this.generateRandom(14, 33);
+var generateRandom = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var randomCustPikePlace = this.generateRandom(minCustPerHour, maxCustPerHour);
 var beanTotalPerHour = (randomCustPikePlace*avgCupPerCust)+(randomCustPikePlace*avgPndPerCust);
