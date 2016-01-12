@@ -14,25 +14,26 @@ var pikePlace = {
   avgPnd: 3.7,
   ranCust: [],
   custHourly: [],
+  cupHourly: [],
   pndHourly: [],
   beansPndHourly: [],
   randomNum: function() {
     for (var i = 0; i < hours.length; i++) {
     this.ranCust.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
     }
-  }
-//   cupsPerHour: function() {
-//     return( * pikePlace.avgCupPerCust);
-//     },
-//   pndsPerHour: function() {
-//     return(pikePlace.pikeRandomNum() * pikePlace.avgPndPerCust);
-//     },
-//   beanTotalPerHour: function () {
-//     return(Math.floor((0.05 * pikePlace.cupPerHour()) + (pikePlace.pndPerHour())));
-//     }
+  },
+  hourlyCups: function() {
+    this.randomNum();
+    for (var i = 0; i < hours.length; i++) {
+      this.cupHourly.push(this.ranCust[i] * this.avgCup);
+      this.pndHourly.push(this.ranCust[i] * this.avgPnd);
+      }
+    }
+  // beanTotalPerHour: function () {
+  //   return(Math.floor((0.05 * pikePlace.cupPerHour()) + (pikePlace.pndPerHour())));
+  //   }
 }
-
-pikePlace.randomNum();
+pikePlace.hourlyCups();
 
 
 // var show = function() {
