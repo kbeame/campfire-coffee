@@ -1,44 +1,45 @@
 // Pike Place
+'use strict';
 var hours = ["6:00 am: ", "7:00 am: ", "8:00 am: ", "9:00 am: ", "10:00 am: ", "11:00 am: ",
 "12 noon: ", "1:00 pm: ", "2:00 pm: ", "3:00 pm: ", "4:00 pm: ", "5:00 pm: ", "6:00 pm: ",
 "7:00 pm: ", "8:00 pm: "];
 
-var pikePlace = {
-  name: "Pike Place",
-  minCust: 14,
-  maxCust: 55,
-  avgCup: 1.2,
-  avgPnd: 3.7,
-  custHourly: [],
-  cupHourly: [],
-  pndHourly: [],
-  beansTotalHourly: [],
-  locationPndsTotal: 0,
-  randomNum: function() {
+var data = function (name, minCust, maxCust, avgCup, avgPnd) {
+  name = this.name;
+  minCust = this.minCust;
+  maxCust = this.maxCust;
+  avgCup = this.avgCup;
+  avgPnd = this.avgPnd;
+  custHourly = [];
+  cupHourly = [];
+  pndHourly = [];
+  beansTotalHourly = [];
+  locationPndsTotal = 0;
+  randomNum = function() {
     for (var i = 0; i < hours.length; i++) {
     this.custHourly.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
     }
-  },
-  hourly: function() {
+  };
+  hourly = function() {
     this.randomNum();
     for (var i = 0; i < hours.length; i++) {
       this.cupHourly.push(this.custHourly[i] * this.avgCup);
       this.pndHourly.push(this.custHourly[i] * this.avgPnd);
       }
-    },
-  totalPerHour: function () {
+    };
+  totalPerHour = function () {
     this.hourly();
     for (var i = 0; i < hours.length; i++) {
       this.beansTotalHourly.push(Math.floor((0.05 * this.cupHourly[i]) + (this.pndHourly[i])));
       }
-    },
-  daily: function () {
+    };
+  daily = function () {
     this.totalPerHour();
     for (var i = 0; i < this.beansTotalHourly.length; i++) {
       this.locationPndsTotal += this.beansTotalHourly[i];
       }
-    },
-  render: function() {
+    };
+  render = function() {
     pikePlace.daily();
     var ulEl = document.createElement('ul');
     ulEl.appendChild(document.createTextNode(this.name));
@@ -52,8 +53,17 @@ var pikePlace = {
   }
 }
 
+data.render();
 
-pikePlace.render();
+
+
+// //pike place
+// var pikePlace = function () {
+//   name: "Pike Place",
+//   minCust: 14,
+//   maxCust: 55,
+//   avgCup: 1.2,
+//   avgPnd: 3.7,
 // //Capitol Hill
 //
 // var capHill = {
