@@ -12,29 +12,45 @@ var pikePlace = {
   maxCust: 55,
   avgCup: 1.2,
   avgPnd: 3.7,
-  ranCust: [],
   custHourly: [],
   cupHourly: [],
   pndHourly: [],
-  beansPndHourly: [],
+  beansTotalHourly: [],
+  locationPndsTotal: 0,
   randomNum: function() {
     for (var i = 0; i < hours.length; i++) {
-    this.ranCust.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+    this.custHourly.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
     }
   },
-  hourlyCups: function() {
+  hourly: function() {
     this.randomNum();
     for (var i = 0; i < hours.length; i++) {
-      this.cupHourly.push(this.ranCust[i] * this.avgCup);
-      this.pndHourly.push(this.ranCust[i] * this.avgPnd);
+      this.cupHourly.push(this.custHourly[i] * this.avgCup);
+      this.pndHourly.push(this.custHourly[i] * this.avgPnd);
+      }
+    },
+  totalPerHour: function () {
+    this.hourly();
+    for (var i = 0; i < hours.length; i++) {
+      this.beansTotalHourly.push(Math.floor((0.05 * this.cupHourly[i]) + (this.pndHourly[i])));
+      }
+    },
+  daily: function () {
+    this.totalPerHour();
+    for (var i = 0; i < this.beansTotalHourly.length; i++) {
+      this.locationPndsTotal += this.beansTotalHourly[i];
       }
     }
-  // beanTotalPerHour: function () {
-  //   return(Math.floor((0.05 * pikePlace.cupPerHour()) + (pikePlace.pndPerHour())));
-  //   }
 }
-pikePlace.hourlyCups();
+pikePlace.daily();
 
+
+// generateHourlyBeansByLb: function() {
+//    for (var i = 0; i < hours.length; i++) {
+//      var beans = Math.floor(this.avgBeansCust * this.hourlyCust[i]);
+//      this.hourlyBeansByLb.push(beans);
+//      this.dailyBeansByLb += beans;
+//    }
 
 // var show = function() {
 //   for (var i = 0; i < hours.length; i++) {
