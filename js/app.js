@@ -1,7 +1,3 @@
-// var generateRandom = function(min, max) {
-//   return(Math.floor(Math.random() * (max - min + 1)) + min);
-// }
-// var pikeRandomNum: generateRandom(14, 33);
 // Pike Place
 var hours = ["6:00 am: ", "7:00 am: ", "8:00 am: ", "9:00 am: ", "10:00 am: ", "11:00 am: ",
 "12 noon: ", "1:00 pm: ", "2:00 pm: ", "3:00 pm: ", "4:00 pm: ", "5:00 pm: ", "6:00 pm: ",
@@ -50,11 +46,13 @@ var pikePlace = {
     for (var i = 0; i < hours.length; i++) {
       var liEl = document.createElement('li');
       //6:00am: 86.5 lbs [23 customers, 27.6 cups (1.4 lbs), 85.1 lbs to-go]
-      liEl.textContent = hours[i] + this.beansTotalHourly[i] + ' [' + this.custHourly[i] + ' customers, ' + this.cupHourly[i] + ' cups (' + (this.cupHourly[i] / 20) + '), ' + this.pndHourly[i] + ' lbs to-go]';
+      liEl.textContent = hours[i] + this.beansTotalHourly[i].toFixed(1) + ' [' + this.custHourly[i] + ' customers, ' + this.cupHourly[i].toFixed(1) + ' cups (' + (this.cupHourly[i] / 20).toFixed(1) + '), ' + this.pndHourly[i].toFixed(1) + ' lbs to-go]';
       ulEl.appendChild(liEl);
     }
   }
 }
+
+
 pikePlace.render();
 // //Capitol Hill
 //
