@@ -8,6 +8,7 @@ var hours = ["6:00 am: ", "7:00 am: ", "8:00 am: ", "9:00 am: ", "10:00 am: ", "
 "7:00 pm: ", "8:00 pm: "];
 
 var pikePlace = {
+  name: "Pike Place",
   minCust: 14,
   maxCust: 55,
   avgCup: 1.2,
@@ -40,33 +41,21 @@ var pikePlace = {
     for (var i = 0; i < this.beansTotalHourly.length; i++) {
       this.locationPndsTotal += this.beansTotalHourly[i];
       }
+    },
+  render: function() {
+    pikePlace.daily();
+    var ulEl = document.createElement('ul');
+    ulEl.appendChild(document.createTextNode(this.name));
+    document.body.appendChild(ulEl);
+    for (var i = 0; i < hours.length; i++) {
+      var liEl = document.createElement('li');
+      //6:00am: 86.5 lbs [23 customers, 27.6 cups (1.4 lbs), 85.1 lbs to-go]
+      liEl.textContent = hours[i] + this.beansTotalHourly[i] + ' [' + this.custHourly[i] + ' customers, ' + this.cupHourly[i] + ' cups (' + (this.cupHourly[i] / 20) + '), ' + this.pndHourly[i] + ' lbs to-go]';
+      ulEl.appendChild(liEl);
     }
+  }
 }
-pikePlace.daily();
-
-
-// generateHourlyBeansByLb: function() {
-//    for (var i = 0; i < hours.length; i++) {
-//      var beans = Math.floor(this.avgBeansCust * this.hourlyCust[i]);
-//      this.hourlyBeansByLb.push(beans);
-//      this.dailyBeansByLb += beans;
-//    }
-
-// var show = function() {
-//   for (var i = 0; i < hours.length; i++) {
-//     if (i < hours.length) {
-//       var listEl = document.createElement('ul');
-//       listEl.textContent = ('Pike Place ' + hours[i] + pikePlace.pikeRandomNum() + " customers, " + pikePlace.cupPerHour() + " cups, " + pikePlace.pndPerHour() + " pnds to-go");
-//       document.body.appendChild(listEl);
-//       }
-//     else {
-//       console.log("done");
-//       }
-//     }
-//   }
-
-// show();
-
+pikePlace.render();
 // //Capitol Hill
 //
 // var capHill = {
