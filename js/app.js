@@ -16,6 +16,7 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.pndHourly = [];
   this.beansTotalHourly = [];
   this.locationPndsTotal = 0;
+  this.coffeeName = ['Pike Place', 'Capitol Hill', 'Seattle Public Library','South Lake Union','SeaTac Airport','Website Sales'];
   this.randomNum = function() {
     for (var i = 0; i < hours.length; i++) {
     this.custHourly.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
@@ -66,22 +67,21 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
       trEl.appendChild(tdEl);
     }
     tblEL.appendChild(trEl);
-    // Append the completely populated UL to the sectEl element in index.html
     sectEl.appendChild(tblEL);
 //PikePlace RenderTable
-for (var i = 0; i < coffeeName.length; i++) {
+for (var i = 0; i < this.coffeeName.length; i++) {
   var trEl2 = document.createElement('tr');
-  trEl2.textContent = coffeeName[i];
-  trEl2.appendChild(trEl2);
+  trEl2.textContent = this.coffeeName[i];
+  tblEL.appendChild(trEl2);
+  if (this.coffeeName[i] = true) {
     for (var i = 0; i < this.beansTotalHourly.length; i++) {
-      // For each iteration of the loop; Create an LI element <li></li>
       var tdEl2 = document.createElement('td');
-      // For each LI element; Assign the contents of the array[i] to the LI's text content
       tdEl2.textContent = this.beansTotalHourly[i];
-      // Append the populated LI element back to the UL as a Child
       trEl2.appendChild(tdEl2);
+    }
       }
   }
+  // sectEl.appendChild(tblEL);
 }
 }
 
@@ -89,20 +89,25 @@ var pikePlace = new LocationCoffee('Pike Place', 14, 55, 1.2, 3.7);
 pikePlace.render();
 pikePlace.renderTable();
 //
-// var capHill = new LocationCoffee('Capitol Hill', 32, 48, 3.2, 0.4);
-// capHill.render();
-//
-// var seaPubLib = new LocationCoffee('Seattle Public Library', 49, 75, 2.6, 0.2);
-// seaPubLib.render();
-//
-// var sLakeUnion = new LocationCoffee('South Lake Union', 35, 88, 1.3, 3.7);
-// sLakeUnion.render();
-//
-// var sTacAir = new LocationCoffee('Sea-Tac Airpot', 68, 124, 1.1, 2.7);
-// sTacAir.render();
-//
-// var websiteSales = new LocationCoffee('Website Sales', 3, 6, 0, 6.7);
-// websiteSales.render();
+var capHill = new LocationCoffee('Capitol Hill', 32, 48, 3.2, 0.4);
+capHill.render();
+capHill.renderTable();
+
+var seaPubLib = new LocationCoffee('Seattle Public Library', 49, 75, 2.6, 0.2);
+seaPubLib.render();
+seaPubLib.renderTable();
+
+var sLakeUnion = new LocationCoffee('South Lake Union', 35, 88, 1.3, 3.7);
+sLakeUnion.render();
+sLakeUnion.renderTable();
+
+var sTacAir = new LocationCoffee('Sea-Tac Airpot', 68, 124, 1.1, 2.7);
+sTacAir.render();
+sTacAir.renderTable();
+
+var websiteSales = new LocationCoffee('Website Sales', 3, 6, 0, 6.7);
+websiteSales.render();
+websiteSales.renderTable();
 
 
 
