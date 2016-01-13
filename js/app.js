@@ -55,35 +55,38 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
     },
 
   this.renderTable = function() {
-    var sectEl = document.getElementById('coffee');
-    var tblEL = document.createElement('table');
-    var trEl = document.createElement('tr');
-    var thEl = document.createElement('th');
-    thEl.textContent = 'Hours';
-    trEl.appendChild(thEl);
+    var sectEl = document.getElementById('myTable');
+    var table = document.createElement('table');
+    var trEl = document.createElement('tr')
+    var tHeadEl = document.createElement('th');
+    tHeadEl.textContent = 'Hours';
+    trEl.appendChild(tHeadEl);
     for (var i = 0; i < hours.length; i++) {
       var tdEl = document.createElement('td');
       tdEl.textContent = hours[i];
-      trEl.appendChild(tdEl);
+      tHeadEl.appendChild(tdEl);
     }
-    tblEL.appendChild(trEl);
-    sectEl.appendChild(tblEL);
+    // table.appendChild(tHeadEl);
+    sectEl.appendChild(tHeadEl);
 //PikePlace RenderTable
 for (var i = 0; i < this.coffeeName.length; i++) {
+  var tableBody = document.createElement('tb');
+  table.appendChild(tableBody);
   var trEl2 = document.createElement('tr');
   trEl2.textContent = this.coffeeName[i];
-  tblEL.appendChild(trEl2);
-  if (this.coffeeName[i] = true) {
-    for (var i = 0; i < this.beansTotalHourly.length; i++) {
+  tableBody.appendChild(trEl2);
+    for (var x = 0; x < this.beansTotalHourly.length; x++) {
       var tdEl2 = document.createElement('td');
-      tdEl2.textContent = this.beansTotalHourly[i];
+      tdEl2.textContent = this.beansTotalHourly[x];
       trEl2.appendChild(tdEl2);
+
     }
       }
+      sectEl.appendChild(table);
   }
   // sectEl.appendChild(tblEL);
 }
-}
+
 
 var pikePlace = new LocationCoffee('Pike Place', 14, 55, 1.2, 3.7);
 pikePlace.render();
