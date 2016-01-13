@@ -66,15 +66,15 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
       tdEl.textContent = hours[i];
       tHeadEl.appendChild(tdEl);
     }
-    // table.appendChild(tHeadEl);
-    sectEl.appendChild(tHeadEl);
+    table.appendChild(tHeadEl);
+    // sectEl.appendChild(tHeadEl);
 //PikePlace RenderTable
 for (var i = 0; i < this.coffeeName.length; i++) {
-  var tableBody = document.createElement('tb');
-  table.appendChild(tableBody);
+  var tBody = document.createElement('tb');
+  table.appendChild(tBody);
   var trEl2 = document.createElement('tr');
   trEl2.textContent = this.coffeeName[i];
-  tableBody.appendChild(trEl2);
+  tBody.appendChild(trEl2);
     for (var x = 0; x < this.beansTotalHourly.length; x++) {
       var tdEl2 = document.createElement('td');
       tdEl2.textContent = this.beansTotalHourly[x];
