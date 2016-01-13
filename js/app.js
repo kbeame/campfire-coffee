@@ -52,39 +52,27 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
       ulEl.appendChild(liEl);
       }
     },
+
   this.renderTable = function() {
     var sectEl = document.getElementById('coffee');
     var tblEL = document.createElement('table');
-//     var trEl = document.createElement('tr');
-//
-//     // Create a header for the Row
-//     var thEl = document.createElement('th');
-//     // Populate the TH element with some basic text content
-//     thEl.textContent = 'Time';
-//     // Append the TH element to the TR element
-//     trEl.appendChild(thEl);
-//
-//
-//     // Loop through the months array, one index at a time
-// for (var i = 0; i < hours.length; i++) {
-//       // For each iteration of the loop; Create an LI element <li></li>
-//       var tdEl = document.createElement('td');
-//       // For each LI element; Assign the contents of the array[i] to the LI's text content
-//       tdEl.textContent = hours[i];
-//       // Append the populated LI element back to the UL as a Child
-//       trEl.appendChild(tdEl);
-//     }
-//     // Append the populated TR element to the Table element
-//     tblEL.appendChild(trEl);
-//     // Append the completely populated UL to the sectEl element in index.html
-//     sectEl.appendChild(tblEL);
-// //PikePlace RenderTable
-    // Create a new Table Row element
+    var trEl = document.createElement('tr');
+    var thEl = document.createElement('th');
+    thEl.textContent = 'Hours';
+    trEl.appendChild(thEl);
+    for (var i = 0; i < hours.length; i++) {
+      var tdEl = document.createElement('td');
+      tdEl.textContent = hours[i];
+      trEl.appendChild(tdEl);
+    }
+    tblEL.appendChild(trEl);
+    // Append the completely populated UL to the sectEl element in index.html
+    sectEl.appendChild(tblEL);
+//PikePlace RenderTable
 for (var i = 0; i < coffeeName.length; i++) {
   var trEl2 = document.createElement('tr');
-  var thEl2 = document.createElement('th');
-  thEl2.textContent = coffeeName[i];
-  trEl2.appendChild(thEl2);
+  trEl2.textContent = coffeeName[i];
+  trEl2.appendChild(trEl2);
     for (var i = 0; i < this.beansTotalHourly.length; i++) {
       // For each iteration of the loop; Create an LI element <li></li>
       var tdEl2 = document.createElement('td');
