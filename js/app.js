@@ -14,11 +14,12 @@ var allShops = [
   ['Website Sales', 3, 6, 0, 6.7]]
 
   var allShopsCollection = [];
-
+//this function should print the hours
   var printShops = function () {
     var sectEl = document.getElementById('myTable');
     var table = document.createElement('table');
-    table.id = 'tableid';
+  //create an ID for the table
+    // table.id = 'tableid';
     var trEl = document.createElement('tr')
     var tHeadEl = document.createElement('th');
     tHeadEl.textContent = 'Hours';
@@ -30,7 +31,7 @@ var allShops = [
     }
     table.appendChild(trEl);
   }
-  
+
   printShops();
 var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.locationName = locationName;
@@ -67,47 +68,21 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
       this.locationPndsTotal += this.beansTotalHourly[i];
       }
     };
-  this.render = function() {
-    this.daily();
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(this.locationName));
-    document.body.appendChild(ulEl);
-    for (var i = 0; i < hours.length; i++) {
-      var liEl = document.createElement('li');
-      //6:00am: 86.5 lbs [23 customers, 27.6 cups (1.4 lbs), 85.1 lbs to-go]
-      liEl.textContent = hours[i] + this.beansTotalHourly[i] + ' [' + this.custHourly[i] + ' customers, ' + this.cupHourly[i].toFixed(1) + ' cups (' + (this.cupHourly[i] / 20).toFixed(1) + '), ' + this.pndHourly[i].toFixed(1) + ' lbs to-go]';
-      ulEl.appendChild(liEl);
-      }
-    },
-
   this.renderTable = function() {
     this.daily();
-    // var sectEl = document.getElementById('myTable');
-    // var table = document.createElement('table');
-    // var trEl = document.createElement('tr')
-    // var tHeadEl = document.createElement('th');
-    // tHeadEl.textContent = 'Hours';
-    // trEl.appendChild(tHeadEl);
-    // for (var i = 0; i < hours.length; i++) {
-    //   var thEl = document.createElement('th');
-    //   thEl.textContent = hours[i];
-    //   trEl.appendChild(thEl);
-    // }
-    // table.appendChild(trEl);
-  var table = document.getElementById('tableid');
-  var tBody = document.createElement('tbody');
-  table.appendChild(tBody);
-  var trEl2 = document.createElement('tr');
-  trEl2.textContent = this.locationName;
-  tBody.appendChild(trEl2);
-    for (var x = 0; x < this.beansTotalHourly.length; x++) {
-      var tdEl2 = document.createElement('td');
-      tdEl2.textContent = this.beansTotalHourly[x];
-      trEl2.appendChild(tdEl2);
-      }
-  // }
+    var table = document.getElementById('tableid');
+    var tBody = document.createElement('tbody');
+    table.appendChild(tBody);
+    var trEl2 = document.createElement('tr');
+    trEl2.textContent = this.locationName;
+    tBody.appendChild(trEl2);
+      for (var x = 0; x < this.beansTotalHourly.length; x++) {
+        var tdEl2 = document.createElement('td');
+        tdEl2.textContent = this.beansTotalHourly[x];
+        trEl2.appendChild(tdEl2);
+        }
       sectEl.appendChild(table);
-}
+    }
 }
 
 
@@ -119,20 +94,3 @@ var allMustDie = function () {
   }
 }
 allMustDie();
-// var pikePlace = new LocationCoffee('Pike Place', 14, 55, 1.2, 3.7);
-// pikePlace.renderTable();
-// //
-// var capHill = new LocationCoffee('Capitol Hill', 32, 48, 3.2, 0.4);
-// capHill.renderTable();
-//
-// var seaPubLib = new LocationCoffee('Seattle Public Library', 49, 75, 2.6, 0.2);
-// // seaPubLib.renderTable();
-//
-// var sLakeUnion = new LocationCoffee('South Lake Union', 35, 88, 1.3, 3.7);
-// // sLakeUnion.renderTable();
-//
-// var sTacAir = new LocationCoffee('Sea-Tac Airpot', 68, 124, 1.1, 2.7);
-// // sTacAir.renderTable();
-//
-// var websiteSales = new LocationCoffee('Website Sales', 3, 6, 0, 6.7);
-// // websiteSales.renderTable();
