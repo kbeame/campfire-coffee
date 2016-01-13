@@ -16,10 +16,9 @@ var allShops = [
   var allShopsCollection = [];
 //this function should print the hours
   var printShops = function () {
-    var sectEl = document.getElementById('myTable');
-    var table = document.createElement('table');
+    var tableEL = document.getElementById('myTable');
   //create an ID for the table
-    // table.id = 'tableid';
+    tableEL.id = 'tableid';
     var trEl = document.createElement('tr')
     var tHeadEl = document.createElement('th');
     tHeadEl.textContent = 'Hours';
@@ -29,9 +28,8 @@ var allShops = [
       thEl.textContent = hours[i];
       trEl.appendChild(thEl);
     }
-    table.appendChild(trEl);
+    tableEL.appendChild(trEl);
   }
-
   printShops();
 var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.locationName = locationName;
@@ -70,18 +68,18 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
     };
   this.renderTable = function() {
     this.daily();
-    var table = document.getElementById('tableid');
-    var tBody = document.createElement('tbody');
-    table.appendChild(tBody);
+    var tableEL = document.getElementById('tableid');
     var trEl2 = document.createElement('tr');
-    trEl2.textContent = this.locationName;
-    tBody.appendChild(trEl2);
+    var tdEl2 = document.createElement('td')
+    tdEl2.textContent = this.locationName;
+    trEl2.appendChild(tdEl2);
+    tableEL.appendChild(trEl2);
       for (var x = 0; x < this.beansTotalHourly.length; x++) {
-        var tdEl2 = document.createElement('td');
-        tdEl2.textContent = this.beansTotalHourly[x];
-        trEl2.appendChild(tdEl2);
+        var tdEl3 = document.createElement('td');
+        tdEl3.textContent = this.beansTotalHourly[x];
+        trEl2.appendChild(tdEl3);
         }
-      sectEl.appendChild(table);
+      tableEL.appendChild(trEl2);
     }
 }
 
@@ -90,7 +88,7 @@ var allMustDie = function () {
   for (var i = 0; i < allShops.length; i++) {
     allShopsCollection.push(new LocationCoffee(allShops[i][0],allShops[i][1],allShops[i][2],allShops[i][3],allShops[i][4]));
     allShopsCollection[i].renderTable();
-    allShopsCollection[i].render();
+
   }
 }
 allMustDie();
