@@ -12,8 +12,11 @@ var allShops = [
   ['South Lake Union', 35, 88, 1.3, 3.7,],
   ['Sea-Tac Airpot', 68, 124, 1.1, 2.7],
   ['Website Sales', 3, 6, 0, 6.7]]
+var allShopsCollection = [];
 
-  var allShopsCollection = [];
+var newStores = [];
+var newShopsCollection = [];
+
 //this function should print the hours
   var printShops = function () {
     var tableEL = document.getElementById('myTable');
@@ -91,8 +94,7 @@ var allMustDie = function () {
 
   }
 }
-allMustDie();
-
+  allMustDie();
 //Lets make an Event Handler
 function handleCommentSubmit(event) {
 	console.log(event); // so you can see what the comment is
@@ -106,16 +108,22 @@ function handleCommentSubmit(event) {
 
 //
   if (!storeName2 || !minCust2 || !maxCust2 || !avgCup2 || !avgPnds2) {
-    return alert('Please Fill in Every Feild.');
+    return alert('Please Fill in Every Field.');
     }
     else {
-      allShops.push(storeName2,minCust2,maxCust2,avgCup2,avgPnds2);
+      var newArray = [storeName2,minCust2,maxCust2,avgCup2,avgPnds2];
+      newStores.push(newArray);
+      console.log(newArray);
       console.log(allShops);
+      for (var i = 0; i < newStores.length; i++) {
+        newShopsCollection.push(new LocationCoffee(newStores[i][0],newStores[i][1],newStores[i][2],newStores[i][3],newStores[i][4]));
+        newShopsCollection[i].renderTable();
+        }
       }
   }
 
 
 
 //lets make an EVENT LISTNER
-var el = document.getElementById('newStore')
-el.addEvenListener(‘submit’, handleCommentSubmit);
+var el = document.getElementById('newStore');
+el.addEventListener('submit', handleCommentSubmit);
