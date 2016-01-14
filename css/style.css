@@ -12,7 +12,10 @@ header {
   background-color:rgb(29,8,37);
 }
 .firelogo {
+  text-align: right;
   background-color:rgb(29,8,37);
+  margin-right: 5%;
+  margin-bottom: 3%;
 }
 
 li, ul {
@@ -38,6 +41,7 @@ li.storeheader {
 }
 
 .storeloca {
+  text-align: center;
   color: green;
   margin-left: auto;
   margin-right: auto;
