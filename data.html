@@ -13,6 +13,24 @@
     <h1>Campfire Coffee<h1>
     <h4>Slogan<h4>
     </header>
+    <form id="new-store">
+      <fieldset>
+        <legend>Store Data</legend>
+
+        <label for="store-name">Location Name:</label>
+        <input name="store-name" type="text">
+        <label for="minCust">Minimum Customers Per Hour:</label>
+        <input name="minCust" type="number">
+        <label for="maxCust">Maximum Customers Per Hour:</label>
+        <input name="maxCust" type="number">
+        <label for="averageCups">Average Cups Per Customer:</label>
+        <input name="averageCups" type="number">
+        <label>Average Pounds Per Customer:</label>
+        <input name="averagePounds" type="number">
+
+        <button id="calculate" type="submit">Calculate</button>
+      </fieldset>
+    </form>
 
     <table border="1px solid black" id='myTable'></table>
     <script src="js/app.js">
