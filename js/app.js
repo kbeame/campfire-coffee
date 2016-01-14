@@ -87,7 +87,7 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
 var allMustDie = function () {
   for (var i = 0; i < allShops.length; i++) {
     allShopsCollection.push(new LocationCoffee(allShops[i][0],allShops[i][1],allShops[i][2],allShops[i][3],allShops[i][4]));
-
+    allShopsCollection[i].renderTable();
 
   }
 }
