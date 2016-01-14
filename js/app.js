@@ -92,3 +92,30 @@ var allMustDie = function () {
   }
 }
 allMustDie();
+
+//Lets make an Event Handler
+function handleCommentSubmit(event) {
+	console.log(event); // so you can see what the comment is
+	event.preventDefault(); //stop the default behavior of the submit event // gotta have it
+  //store the new inputs as new objects for ease of use
+  var storeName2 = event.target.storename.value;
+  var minCust2 = event.target.minCust.value;
+  var maxCust2 = event.target.maxCust.value;
+  var avgCup2 = event.target.averageCups.value;
+  var avgPnds2 = event.target.averagePounds.value;
+
+//
+  if (!storeName2 || !minCust2 || !maxCust2 || !avgCup2 || !avgPnds2) {
+    return alert('Please Fill in Every Feild.');
+    }
+    else {
+      allShops.push(storeName2,minCust2,maxCust2,avgCup2,avgPnds2);
+      console.log(allShops);
+      }
+  }
+
+
+
+//lets make an EVENT LISTNER
+var el = document.getElementById('newStore')
+el.addEvenListener(‘submit’, handleCommentSubmit);
