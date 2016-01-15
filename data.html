@@ -1,33 +1,28 @@
 <html>
   <head>
     <title>Campfire Coffee</title>
-    <style>
-    * {
-    /*background-color:rgb(1,25,1;*/
-    color:rgb(55,32,2);
-  }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/datastyle.css">
   </head>
   <body>
     <header>
-    <h1>Campfire Coffee Data<h1>
-    <h4>Slogan<h4>
+      <h1>Campfire Coffee Data<h1>
+      <h4>From the tent to the fire, it's our coffee you require<h4>
     </header>
     <form id="newStore">
       <fieldset>
         <legend>Store Data</legend>
 
         <label for="storename">Location Name:</label>
-        <input name="storename" type="text">
+        <input name="storename" type="text"></br>
 
         <label for="minCust">Minimum Customers Per Hour:</label>
-        <input name="minCust" type="text">
+        <input name="minCust" type="text"></br>
 
         <label for="maxCust">Maximum Customers Per Hour:</label>
-        <input name="maxCust" type="text">
+        <input name="maxCust" type="text"></br>
 
         <label for="averageCups">Average Cups Per Customer:</label>
-        <input name="averageCups" type="text">
+        <input name="averageCups" type="text"></br>
 
         <label>Average Pounds Per Customer:</label>
         <input name="averagePounds" type="text">
@@ -36,7 +31,7 @@
       </fieldset>
     </form>
 
-    <table border="1px solid black" id='myTable'></table>
+    <table id='myTable'></table>
     <script src="js/app.js">
     </script>
   </body>
