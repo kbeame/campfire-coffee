@@ -16,20 +16,33 @@ var allShopsCollection = [];
 
 //this function should print the hours
   var printHoursHeader = function () {
+    //first table header creation
     var tableEL = document.getElementById('myTable');
     tableEL.id = 'tableid';   //create an ID for the table
     var trEl = document.createElement('tr');
     var tHeadEl = document.createElement('th');
-    tHeadEl.textContent = 'Hours';
+    tHeadEl.textContent = 'Location';
     trEl.appendChild(tHeadEl);
-
+    //first table header for loop
     for (var i = 0; i < hours.length; i++) {
       var thEl = document.createElement('th');
       thEl.textContent = hours[i];
       trEl.appendChild(thEl);
     }
     tableEL.appendChild(trEl);
+    //2nd table heading render
+    var table2 = document.getElementById('tableTwo');
+    var trow2 = document.createElement('tr');
+    var tHead2 = document.createElement('th');
+    tHead2.textContent = 'Location';
+    trow2.appendChild(tHead2);
+
+    var totaldata = document.createElement('td')
+    totaldata.textContent = "Total Beans"
+    trow2.appendChild(totaldata)
   }
+
+
   printHoursHeader();
 var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.locationName = locationName;
@@ -69,20 +82,32 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
     };
   this.renderTable = function() {
     this.daily();
-
+//first table header creation
     var tableEL = document.getElementById('tableid');
     var trEl2 = document.createElement('tr');
     var tdEl2 = document.createElement('td')
     tdEl2.textContent = this.locationName;
     trEl2.appendChild(tdEl2);
     tableEL.appendChild(trEl2);
-
-      for (var x = 0; x < this.beansTotalHourly.length; x++) {
+//first table data creation
+      for (var x = 0; x < this.custHourly.length; x++) {
         var tdEl3 = document.createElement('td');
-        tdEl3.textContent = this.beansTotalHourly[x];
+        tdEl3.textContent = this.custHourly[x];
         trEl2.appendChild(tdEl3);
         }
       tableEL.appendChild(trEl2);
+//2nd table data creation
+    var table2data = document.getElementById('tableTwo');
+    var tr2 = document.createElement('tr');
+    var td2 = document.createElement('td');
+    td2.textContent = this.locationName;
+    tr2.appendChild(td2);
+
+    var td3 = document.createElement('td');
+    td3.textContent = this.locationPndsTotal;
+    tr2.appendChild(td3);
+    table2data.appendChild(tr2);
+
     }
 }
 
