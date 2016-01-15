@@ -3,7 +3,6 @@
 var hours = ["6:00 am: ", "7:00 am: ", "8:00 am: ", "9:00 am: ", "10:00 am: ", "11:00 am: ",
 "12 noon: ", "1:00 pm: ", "2:00 pm: ", "3:00 pm: ", "4:00 pm: ", "5:00 pm: ", "6:00 pm: ",
 "7:00 pm: ", "8:00 pm: "];
-var coffeeName = ['Pike Place', 'Capitol Hill', 'Seattle Public Library','South Lake Union','SeaTac Airport','Website Sales'];
 
 var allShops = [
   ['Pike Place', 14, 55, 1.2, 3.7],
@@ -13,16 +12,17 @@ var allShops = [
   ['Sea-Tac Airpot', 68, 124, 1.1, 2.7],
   ['Website Sales', 3, 6, 0, 6.7]]
 
-  var allShopsCollection = [];
+var allShopsCollection = [];
+
 //this function should print the hours
-  var printShops = function () {
+  var printHoursHeader = function () {
     var tableEL = document.getElementById('myTable');
-  //create an ID for the table
-    tableEL.id = 'tableid';
-    var trEl = document.createElement('tr')
+    tableEL.id = 'tableid';   //create an ID for the table
+    var trEl = document.createElement('tr');
     var tHeadEl = document.createElement('th');
     tHeadEl.textContent = 'Hours';
     trEl.appendChild(tHeadEl);
+
     for (var i = 0; i < hours.length; i++) {
       var thEl = document.createElement('th');
       thEl.textContent = hours[i];
@@ -30,7 +30,7 @@ var allShops = [
     }
     tableEL.appendChild(trEl);
   }
-  printShops();
+  printHoursHeader();
 var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.locationName = locationName;
   this.minCust = minCust;
@@ -42,6 +42,7 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
   this.pndHourly = [];
   this.beansTotalHourly = [];
   this.locationPndsTotal = 0;
+  //methods
   this.randomNum = function() {
     for (var i = 0; i < hours.length; i++) {
     this.custHourly.push(Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
@@ -68,12 +69,14 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
     };
   this.renderTable = function() {
     this.daily();
+
     var tableEL = document.getElementById('tableid');
     var trEl2 = document.createElement('tr');
     var tdEl2 = document.createElement('td')
     tdEl2.textContent = this.locationName;
     trEl2.appendChild(tdEl2);
     tableEL.appendChild(trEl2);
+
       for (var x = 0; x < this.beansTotalHourly.length; x++) {
         var tdEl3 = document.createElement('td');
         tdEl3.textContent = this.beansTotalHourly[x];
@@ -83,39 +86,42 @@ var LocationCoffee = function (locationName, minCust, maxCust, avgCup, avgPnd) {
     }
 }
 
-
+//This function has to be run to get the data and rendering to work
 var allMustDie = function () {
   for (var i = 0; i < allShops.length; i++) {
     allShopsCollection.push(new LocationCoffee(allShops[i][0],allShops[i][1],allShops[i][2],allShops[i][3],allShops[i][4]));
-    allShopsCollection[i].renderTable();
+    allShopsCollection[i].renderTable();  //apparently I could instead call this within the array
 
   }
 }
-allMustDie();
+  allMustDie();
 
 //Lets make an Event Handler
 function handleCommentSubmit(event) {
 	console.log(event); // so you can see what the comment is
-	event.preventDefault(); //stop the default behavior of the submit event // gotta have it
+	event.preventDefault(); //stop the default behavior of the submit event
   //store the new inputs as new objects for ease of use
   var storeName2 = event.target.storename.value;
-  var minCust2 = event.target.minCust.value;
-  var maxCust2 = event.target.maxCust.value;
-  var avgCup2 = event.target.averageCups.value;
-  var avgPnds2 = event.target.averagePounds.value;
+  var minCust2 = parseFloat(event.target.minCust.value);
+  var maxCust2 = parseFloat(event.target.maxCust.value);
+  var avgCup2 = parseFloat(event.target.averageCups.value);
+  var avgPnds2 = parseFloat(event.target.averagePounds.value);
 
-//
+  //render the new store on the table
   if (!storeName2 || !minCust2 || !maxCust2 || !avgCup2 || !avgPnds2) {
-    return alert('Please Fill in Every Feild.');
+    return alert('Please Fill in Every Field.');
     }
     else {
-      allShops.push(storeName2,minCust2,maxCust2,avgCup2,avgPnds2);
-      console.log(allShops);
-      }
-  }
-
-
+        var newStore = new LocationCoffee(storeName2,minCust2,maxCust2,avgCup2,avgPnds2);
+        newStore.renderTable();
+        event.target.storename.value = null;
+        event.target.minCust.value = null;
+        event.target.maxCust.value = null;
+        event.target.averageCups.value = null;
+        event.target.averagePounds.value = null;
+        }
+    }
 
 //lets make an EVENT LISTNER
-var el = document.getElementById('newStore')
-el.addEvenListener(‘submit’, handleCommentSubmit);
+var el = document.getElementById('newStore');
+el.addEventListener('submit', handleCommentSubmit);

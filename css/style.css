@@ -7,9 +7,11 @@
 }
 header {
   background-color:rgb(29,8,37);
+  color:rgb(55,32,2)
 }
 .name {
   background-color:rgb(29,8,37);
+  color:rgb(55,32,2);
 }
 .firelogo {
   text-align: right;
@@ -22,7 +24,7 @@ li, ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    font-family:serif;
+    font-family: cursive;
 }
 ul {
   display: inline;
@@ -37,12 +39,13 @@ ul {
 
 }
 li.storeheader {
+  color:rgb(55,32,2)
   font-family: fantasy;
 }
 
 .storeloca {
   text-align: center;
-  color: green;
+  color: brown;
   margin-left: auto;
   margin-right: auto;
   width:6 em;
@@ -52,6 +55,15 @@ li.storeheader {
 .purchasing {
   display: inline-block;
 }
+
+/*Sections*/
+/*images centered*/
+img {
+  margin-left: 10%;
+  margin-right: 30%;
+  text-align: center;
+}
+
 article {
   width: 90%;
   margin:1%;
@@ -60,11 +72,26 @@ article {
   color: white;
   background-color:rgb(55,32,2);
 }
+h1 {
+  text-align: left;
+  font-family: fantasy;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+h4 {
+  font-family: cursive;
+}
 section.column1, section.column2 {
   width: 40%;
   margin:1%;
   padding: 1%;
+  border-style: double;
+  border-color: purple;
   display: inline-table;
-  height: 40%
+  height: 50%
   background-color:1F3B0F;
 }

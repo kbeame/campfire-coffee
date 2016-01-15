@@ -1,0 +1,46 @@
+<style>
+* {
+background-color: #84A068;
+color:rgb(55,32,2);
+}
+
+table.myTable {
+  border-style: solid;
+  border:1px solid black;
+  letter-spacing: normal;
+  border-collapse: collapse;
+}
+table {
+  border:2px solid #111111;
+  border-collapse: collapse;
+}
+th, td {
+  padding:7px 10px 10px 10px;
+  border: 1px solid #383C34;
+  text-align: center;
+}
+th {
+  border-bottom: 3px solid #111111;
+  text-align: center;
+}
+tr {
+  background-color: #84A068;
+  border: 1px solid black;
+  text-align: center;
+}
+input {
+  display: block;
+  background-color: white;
+  border:1px solid #999;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 5px;
+  background-position: 8px 9px;
+  background-image: url("img/coffee.png");
+}
+
+input.calculate {
+  color: #65FF00;
+  text-shadow: 0px 1px 1px #ffffff;
+  font-family: fantasy;
+}
