@@ -2,16 +2,29 @@
 * {
   background-color:rgb(1,25,1);
   color:rgb(55,32,2)
-
-  /*dark green rgb(15,37,3);*/
 }
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content:center;
   background-color:rgb(29,8,37);
   color:rgb(55,32,2)
 }
 .name {
+  display: flex;
+  flex-direction: column;
+
   background-color:rgb(29,8,37);
   color:rgb(55,32,2);
+}
+.name > h1 {
+  font-size: 48px;
+}
+blockquote > h4 {
+  font-size: 16px;
+  font-style: fantasy;
 }
 .firelogo {
   text-align: right;
