@@ -77,6 +77,7 @@ li.storeheader {
 /*Sections*/
 /*images centered*/
 img {
+  align-items: center;
   margin-left: 10%;
   margin-right: 30%;
   text-align: center;
@@ -133,6 +134,10 @@ article {
   justify-content: center;
   align-content: center;
   background-color:#2C2416;
+}
+article > img {
+  display: flex;
+  align-items: center;
 }
 p {
   background-color:#2C2416;
