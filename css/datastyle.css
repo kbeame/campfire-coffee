@@ -1,0 +1,120 @@
+<style>
+* {
+background-color: #84A068;
+color:rgb(55,32,2);
+}
+/*header stuff*/
+div > h1 {
+  opacity: 1;
+  margin-left: 1%;
+  margin-top: 1%
+  margin-right: 1%;
+  margin-bottom: 0%;
+  font-weight: 900;
+  font-size: 700%;
+  color: white;
+  text-shadow: 5px 5px black;
+}
+div > img {
+  opacity: 1;
+  background-color: white;
+  border-radius: 100px;
+  margin-bottom: 3%;
+}
+div > h4 {
+  opacity: 1;
+  z-index: 99;
+  margin-top: 0%;
+  margin-right: 1%
+  margin-left: 1%;
+  font-size: 200%;
+  font-family: fantasy;
+  color: white;
+  text-shadow: 1px 2px black;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: green;
+  z-index: 2;
+  opacity: .65;
+  border-radius: 25px;
+}
+
+.name {
+  color: white;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*making the tables look okay*/
+
+h2 {
+  font-family: Tahoma;
+  text-decoration: underline;
+}
+table {
+  border:2px solid #111111;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 10px black;
+}
+th, td {
+  padding:7px 10px 10px 10px;
+  border: 1px solid #383C34;
+  text-align: center;
+}
+th {
+  border-bottom: 3px solid #111111;
+  text-align: center;
+}
+tr {
+  background-color: #84A068;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+}
+/*Making the form pretty*/
+form {
+  margin-top: 3%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  width:30%;
+  height:350px;
+  font-family: Tahoma;
+  font-size: 14px;
+  font-weight: bold;
+  color: green;
+  border-radius: 10px;
+  padding:10px;
+  border: 1px solid green;
+  box-shadow: 0px 0px 8px black;
+}
+input {
+  width:100%;
+  display:block;
+  border: 1px solid grey;
+  height: 25px;
+  box-shadow: 0px 0px 8px grey;
+  }
+
+button {
+  width:100px;
+  margin-top: 2%;
+  background:green;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: Tahoma;
+  height:30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px grey;
+  border: .5px solid black;
+}

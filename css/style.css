@@ -1,1 +1,245 @@
 /*my css will be in here*/
+* {
+  color:#BAA378;
+}
+div > h1 {
+  opacity: 1;
+  margin-left: 1%;
+  margin-top: 1%
+  margin-right: 1%;
+  margin-bottom: 0%;
+  font-weight: 900;
+  font-size: 700%;
+  color: white;
+  text-shadow: 5px 5px black;
+}
+div > img {
+  opacity: 1;
+  background-color: white;
+  border-radius: 100px;
+  margin-bottom: 3%;
+}
+div > h4 {
+  opacity: 1;
+  z-index: 99;
+  margin-top: 0%;
+  margin-right: 1%
+  margin-left: 1%;
+  font-size: 200%;
+  font-family: fantasy;
+  color: white;
+  text-shadow: 3px 3px black;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: url(http://charlestoncoffeeexchange.com/wp-content/uploads/2013/05/coffee-bean-extract1.jpg) #382E1C;
+  z-index: 2;
+  opacity: .65;
+  border-radius: 25px;
+}
+
+.name {
+  color: white;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color:#BAA378;
+}
+
+li, ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    color: #382E1C;
+}
+ul {
+  display: inline;
+}
+.address {
+  display: inline-block;
+  padding: 1%;
+  margin: 1%;
+  border: 5px
+  border-style:solid;
+  border-color: brown;
+
+}
+li.storeheader {
+  color:#2C2416;
+  font-family: fantasy;
+}
+.storeloca {
+  padding: none;
+  text-align: center;
+  color: #382E1C;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  font-size: 30px;
+  font-family: fantasy;
+  font-style: bold;
+  margin: 1%;
+  background-color:1DO825;
+}
+
+.purchasing {
+  display: inline-block;
+}
+
+h1 {
+  text-align: left;
+  font-family: fantasy;
+  font-size:1000%;
+}
+h2 {
+  font-size: 200%;
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+h4 {
+  font-family: cursive;
+}
+section.column1, section.column2 {
+  width: 60%;
+  border-radius: 25px;
+  margin:.5%;
+  padding: .5%;
+  /*border: 6px;
+  border-style: solid;
+  border-color: #453823;*/
+  background-color:1F3B0F;
+}
+section.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+section.column1 {
+  display: flex;
+  border-radius: 25px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1%;
+}
+section.column2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1%;
+  border-radius: 30px;
+}
+article {
+  box-shadow: 0px 0px 8px white;
+  border-radius: 25px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color:#2C2416;
+  margin: 1%;
+  padding: 1%;
+}
+article.purchasing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+nav > h3 {
+  font-weight: bold;
+  font-size: 110%;
+  font-family: fantasy;
+  margin-bottom: 0%;
+}
+.camplinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-indent: 20px;
+  background-color:#2C2416;
+  padding: 1%;
+  margin: 2%;
+}
+
+ol {
+  padding-top: 0%;
+  margin-top: 0%;
+  font-family: fantasy;
+  padding: 1%;
+  text-align: center;
+  background-color:#2C2416;
+}
+
+ol > li {
+  list-style-type:disc;
+  text-align: left;
+  background-color:#2C2416;
+}
+
+article > h3 {
+  text-shadow: 1px 1px black;
+  background-color:#2C2416;
+  font-family: fantasy;
+  padding: 1%;
+  margin: 1%
+}
+
+article > h2 {
+  text-shadow: 1px 1px black;
+  margin: 1%;
+  padding: 1%;
+  font-family: fantasy;
+  background-color:#2C2416;
+
+}
+h3 {
+  margin: 1%;
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.foot {
+  border: 2px #2C2416 solid;
+  border-radius: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.foot > li {
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+}
+article > img {
+  border-radius: 15px;
+  border: 1px #BAA378 solid;
+  box-shadow: 0px 0px 10px #BAA378;
+}

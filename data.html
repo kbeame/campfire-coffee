@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Campfire Coffee</title>
+    <link rel="stylesheet" type="text/css" href="css/datastyle.css">
+  </head>
+  <body>
+    <header class="name">
+    <div>
+    <h1>Campfire Coffee</h1>
+    <h4>"From the tent to the fire, it's our coffee you require"</h4>
+    <img src="img/campfire-logo.png" alt="family" style="width:150px;height:150px;">
+    </div>
+    </header>
+
+    <form id="newStore">
+      <fieldset>
+        <legend>Store Data</legend>
+
+        <label for="storename">Location Name:</label>
+        <input name="storename" type="text"></br>
+
+        <label for="minCust">Minimum Customers Per Hour:</label>
+        <input name="minCust" type="text"></br>
+
+        <label for="maxCust">Maximum Customers Per Hour:</label>
+        <input name="maxCust" type="text"></br>
+
+        <label for="averageCups">Average Cups Per Customer:</label>
+        <input name="averageCups" type="text"></br>
+
+        <label>Average Pounds Per Customer:</label>
+        <input name="averagePounds" type="text">
+
+        <button id="calculate" type="submit">Calculate</button>
+      </fieldset>
+    </form>
+    <div>
+    <h2>Average Customers Per Hour</h2>
+    <table id='myTable'></table>
+
+    <h2>Total Daily Beans</h2>
+    <table id='tableTwo'></table>
+    </div>
+    <script src="js/app.js">
+    </script>
+  </body>
+</html>
