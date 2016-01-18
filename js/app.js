@@ -37,9 +37,10 @@ var allShopsCollection = [];
     tHead2.textContent = 'Location';
     trow2.appendChild(tHead2);
 
-    var totaldata = document.createElement('td')
-    totaldata.textContent = "Total Beans"
-    trow2.appendChild(totaldata)
+    var totaldata = document.createElement('th');
+    totaldata.textContent = "Total Beans";
+    trow2.appendChild(totaldata);
+    table2.appendChild(trow2);
   }
 
 
