@@ -82,7 +82,7 @@ tr {
   border-radius: 5px;
 }
 /*Making the form pretty*/
-form    {
+form {
   margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
@@ -98,7 +98,7 @@ form    {
   border: 1px solid green;
   box-shadow: 0px 0px 8px black;
 }
-input    {
+input {
   width:100%;
   display:block;
   border: 1px solid grey;
@@ -107,14 +107,14 @@ input    {
   }
 
 button {
-width:100px;
-margin-top: 2%;
-background:green;
-color: white;
-text-shadow: 1px 1px black;
-font-family: Tahoma;
-height:30px;
-border-radius: 15px;
-box-shadow: 0px 0px 8px grey;
-border: .5px solid black;
+  width:100px;
+  margin-top: 2%;
+  background:green;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: Tahoma;
+  height:30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px grey;
+  border: .5px solid black;
 }
